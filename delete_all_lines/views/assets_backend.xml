@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <template id="assets_backend" name="delete all lines assets" inherit_id="web.assets_backend">
+        <xpath expr="." position="inside">
+            <link rel="stylesheet" type="text/less" href="/delete_all_lines/static/src/css/delete_all_lines.css"/>
+            <script type="text/javascript" src="/delete_all_lines/static/src/js/delete_all_lines.js"></script>
+        </xpath>
+    </template>
+</odoo>

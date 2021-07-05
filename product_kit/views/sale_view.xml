@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    
+    <record id="product_kit_view_order_form" model="ir.ui.view">
+        <field name="name">kit.sale.order.form.view</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_order_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='order_line']" position="before">
+                <group>
+                    <button name="%(product_kit.action_product_kit)d" string="Add Product Kit" type="action" class="btn-primary" states="draft,sent,sale"/>
+                </group>
+            </xpath>
+        </field>
+    </record>
+</odoo>

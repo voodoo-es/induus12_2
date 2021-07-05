@@ -1,0 +1,86 @@
+<?xml version="1.0"?>
+<odoo>
+    <record id="devoluiva_importar_gastos_form" model="ir.ui.view">
+        <field name="name">devoluiva.importar_gastos.form</field>
+        <field name="model">devoluiva.importar_gastos</field>
+        <field name="arch" type="xml">
+            <form string="Importar gastos">
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="fecha_inicio"/>
+                        </group>
+                        <group>
+                            <field name="fecha_fin"/>
+                        </group>
+                        <group>
+                            <button string="Buscar" name="buscar_gastos_action" type="object" class="btn-primary"/>
+                        </group>
+                    </group>
+                    <group string="Gastos">
+                        <field name="gasto_ids" readonly="1" nolabel="1">
+                            <tree decoration-muted="existe" decoration-danger="invalido">
+                                <field name="id_gasto" string="ID"/>
+                                <field name="name"/>
+                                <field name="product_tmpl_id"/>
+                                <field name="number"/>
+                                <field name="issue_date"/>
+                                <field name="employee_id"/>
+                                <field name="payment_mode"/>
+                                <field name="partner_id"/>
+                                <field name="tax_ids" widget="many2many_tags"/>
+                                <field name="total"/>
+                                <field name="existe" invisible="1"/>
+                                <field name="invalido" invisible="1"/>
+                            </tree>
+                            <form>
+                                <group>
+                                    <field name="name"/>
+                                    <field name="service_type"/>
+                                    <field name="product_tmpl_id"/>
+                                    <field name="total"/>
+                                    <field name="number"/>
+                                    <field name="issue_date"/>
+                                    <field name="id_customer_user"/>
+                                    <field name="name_customer_user"/>
+                                    <field name="employee_id"/>
+                                    <field name="payment_mode"/>
+                                    <field name="nif"/>
+                                    <field name="partner_id"/>
+                                    <field name="tax_ids" widget="many2many_tags"/>
+                                    <field name="currency_id"/>
+                                    <field name="id_currency"/>
+                                    <field name="id_gasto"/>
+                                    <field name="existe" invisible="1"/>
+                                    <field name="invalido" invisible="1"/>
+                                </group>
+                            </form>
+                        </field>
+                    </group>
+                </sheet>
+                <footer>
+                    <button string="Importar" name="action_importar" type="object" class="btn-primary"/>
+                    <button string="Cancel" class="btn-secondary" special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="devoluiva_importar_gastos_action" model="ir.actions.act_window">
+            <field name="name">Importar Gastos</field>
+            <field name="res_model">devoluiva.importar_gastos</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form,tree</field>
+            <field name="target">new</field>
+        </record>
+
+    <menuitem id="menu_devoluiva_main"
+              name="Devoluiva"
+              parent="hr_expense.menu_hr_expense_root"
+              sequence="50"/>
+
+    <menuitem id="menu_devoluiva_importar_gastos"
+              action="devoluiva_importar_gastos_action"
+              parent="devoluiva.menu_devoluiva_main"
+              sequence="5"/>
+</odoo>

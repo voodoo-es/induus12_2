@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_tax_form" model="ir.ui.view">
+        <field name="name">account.tax.form.devoluiva</field>
+        <field name="model">account.tax</field>
+        <field ref="account.view_tax_form" name="inherit_id"/>
+        <field name="arch" type="xml">
+            <xpath expr="//notebook[1]" position="inside">
+                <page string="Devoluiva">
+                    <group>
+                        <field name="devoluiva_tax_type"/>
+                        <field name="devoluiva_tax_rate"/>
+                    </group>
+                </page>
+            </xpath>
+        </field>
+    </record>
+</odoo>
+

@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <template id="option_colorPicker" name="option_colorPicker" inherit_id="website.assets_frontend" active="False">
+    <xpath expr="." position="inside"></xpath>
+  </template>
+
+  <template id="theme_customize" inherit_id="website.theme_customize" name="theme_alan modal">
+    <xpath expr="//div" position="replace">
+    <div>
+        <!-- Layout Options -->
+        <content id="theme_customize_content_layout" string="Layout" title="Choose layout">
+            <!-- In a <more/> so that it is on a new line if themes add options before -->
+            <more data-depends="">
+                <list string="Body">
+                    <opt string="Full" data-xmlid="theme_alan.option_layout_fullwidth" data-reload="/" />
+                    <opt id="option_layout_boxed" string="Boxed" data-xmlid="theme_alan.option_layout_boxed" data-reload="/" />
+                </list>
+            </more>
+        </content>
+
+        <content id="theme_customize_content_colors" string="Colors" title="Choose theme color">
+            <opt data-xmlid="" data-color-palette="user" string="Choose your colors" id="custom_color_palate" data-reload="/"/>
+        </content>
+
+        <content id="theme_customize_shop_layout" string="Shop" title="Shop layout">
+          <more data-depends="">
+            <list string="Shop" id="customshop">
+              <opt id="options_shop_full_width" string="Shop full width" data-xmlid="theme_alan.options_shop_full_width" data-reload="/" />
+              <opt id="options_shop_reset" string="Shop reset" data-xmlid="theme_alan.options_shop_reset" data-reload="/" />
+            </list>
+          </more>
+        </content>
+
+        <content id="theme_customize_product_options" string="Product View" title="Product multi-image options">
+          <more data-depends="">
+            <list string="" id="customproduct">
+              <opt id="options_vertical_slider" string="Vertical slider" data-xmlid="theme_alan.options_vertical_slider" data-reload="/" />
+              <opt id="options_horizontal_slider" string="Horizontal slider" data-xmlid="theme_alan.options_horizontal_slider" data-reload="/" />
+            </list>
+          </more>
+        </content>
+    </div>
+    </xpath>
+  </template>
+  <!-- ===================== LAYOUT OPTIONS ======================== -->
+  <template id="option_layout_fullwidth" name="theme_alan_option_layout_fullwidth" inherit_id="website.assets_frontend" active="true">
+    <xpath expr="." position="inside"><link href="/alan_customize/static/src/scss/options/layout/full-width.scss" rel="stylesheet" type="text/scss"/></xpath>
+  </template>
+  <template id="option_layout_boxed" name="theme_alan_option_layout_boxed" inherit_id="website.assets_frontend" active="False">
+    <xpath expr="." position="inside"><link href="/alan_customize/static/src/scss/options/layout/boxed.scss" rel="stylesheet" type="text/scss"/></xpath>
+  </template>
+
+  <!-- ===================== Product OPTIONS ======================== -->
+  <template id="options_vertical_slider" name="theme_alan_options_vertical_slider" inherit_id="website.assets_frontend" active="False">
+    <xpath expr="." position="inside">
+      <link href="/alan_customize/static/src/scss/options/product-details/option-1.scss" rel="stylesheet" type="text/scss"/>
+      <script type="text/javascript" src="/alan_customize/static/src/scss/options/product-details/option-1.js"></script>
+    </xpath>
+  </template>
+  <template id="options_horizontal_slider" name="theme_alan_options_horizontal_slider" inherit_id="website.assets_frontend" active="true">
+    <xpath expr="." position="inside">
+      <link href="/alan_customize/static/src/scss/options/product-details/option-2.scss" rel="stylesheet" type="text/scss"/>
+      <script type="text/javascript" src="/alan_customize/static/src/scss/options/product-details/option-2.js"></script>
+    </xpath>
+  </template>
+
+  <!-- ===================== SHOP OPTIONS ======================== -->
+  <template id="options_shop_full_width" name="theme_alan_options_shop_full_width" inherit_id="website.assets_frontend" active="true">
+    <xpath expr="." position="inside">
+      <link href="/alan_customize/static/src/scss/options/shop/shop-full-width.scss" rel="stylesheet" type="text/scss"/>
+    </xpath>
+  </template>
+
+  <template id="options_shop_reset" name="theme_alan_options_shop_reset" inherit_id="website.assets_frontend" active="False">
+    <xpath expr="." position="inside">
+      <link href="/alan_customize/static/src/scss/options/shop/shop-full-reset.scss" rel="stylesheet" type="text/scss"/>
+    </xpath>
+  </template>
+
+</odoo>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="product_kit_form_view" model="ir.ui.view">
+        <field name="name">product.kit.form.view</field>
+        <field name="model">product.kit</field>
+        <field name="arch" type="xml">
+            <form string="Product Kit" class="o_sale_order">
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="product_kit_id" required="1"/>
+                        </group>
+                        <group>
+                            <field name="quantity"/>
+                        </group>
+                    </group>
+                    <group string="Sub Products">
+                        <field name="sub_product_line_ids" nolabel="1">
+                            <tree editable="bottom">
+                                <field name="product_id" required="1"/>
+                                <field name="qty_available" readonly="1"/>
+                                <field name="quantity"/>
+                            </tree>
+                        </field>
+                    </group>
+                </sheet>
+                <footer>
+                    <button string='Add SO Lines' name="add_lines" type="object" class="btn-primary"/>
+                    <button string="Cancel" class="btn-default" special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_product_kit" model="ir.actions.act_window">
+        <field name="name">Add SO Lines</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">product.kit</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+    </record>
+
+</odoo>

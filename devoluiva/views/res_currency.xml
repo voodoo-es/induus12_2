@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_currency_form" model="ir.ui.view">
+        <field name="name">res.currency.form.devoluiva</field>
+        <field name="model">res.currency</field>
+        <field ref="base.view_currency_form" name="inherit_id"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='rate']" position="after">
+                <field name="devoluiva_id_currency"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>

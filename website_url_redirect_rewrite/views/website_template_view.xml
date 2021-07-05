@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <template id="Product_item_inherit" inherit_id="website_sale.products_item">
+    	 <xpath expr="//t[@t-set='product_href']" position="replace">
+    	 	 <t t-set="product_href" t-value="keep(product.website_url, page=(pager['page']['num'] if pager['page']['num']&gt;1 else None))" />
+
+    	 </xpath>
+    </template>
+</odoo>

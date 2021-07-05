@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <template id="website_conditions_view" name="Website Conditions">
+        <t t-call="website.layout">
+            <div id="wrap" class="oe_structure oe_empty">
+                <div class="container">
+                    <h2 class="text-center">Terms of Service</h2>
+                    <h3 class="text-center text-muted">Terms of service to use site</h3>
+                    <div class="row">
+                        <div class="col-md-12 mb16 mt16">
+                            <p>
+                                Write your terms of service here...
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+         </t>
+    </template>
+
+    <record id="website_conditions_page" model="website.page">
+        <field name="website_published">True</field>
+        <field name="url">/conditions</field>
+        <field name="view_id" ref="website_conditions_view" />
+    </record>
+
+    <template id="website_privacy_policy_view" name="Website Privacy Policy">
+        <t t-call="website.layout">
+            <div id="wrap" class="oe_structure oe_empty">
+                <div class="container">
+                    <h2 class="text-center">Privacy Policy</h2>
+                    <h3 class="text-center text-muted">Privacy policy to use site</h3>
+                    <div class="row">
+                        <div class="col-md-12 mb16 mt16">
+                            <p>
+                                Write your privacy policy here...
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+         </t>
+    </template>
+
+    <record id="website_privacy_policy_page" model="website.page">
+        <field name="website_published">True</field>
+        <field name="url">/privacy-policy</field>
+        <field name="view_id" ref="website_privacy_policy_view" />
+    </record>
+
+</odoo>

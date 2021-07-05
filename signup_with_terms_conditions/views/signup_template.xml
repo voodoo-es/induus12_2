@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <template id="signup_with_terms_and_conditions" inherit_id="auth_signup.signup">
+        <xpath expr="//div[hasclass('oe_login_buttons')]" position="before">
+            <div class="terms-of-service">
+                <t t-if="enable_terms_of_service">
+                    <b><input type="checkbox" name="chbksignup" required="required"/>
+                        Acepto las <a href="/legal/terms-of-use" target="_blank">condiciones de uso</a>
+                        <t t-if="enable_privacy_policy"> y <a href="/legal/privacy-policy" target="_blank">la política de privacidad</a></t>.</b>
+                </t>
+            </div>
+        </xpath>
+    </template>
+</odoo>

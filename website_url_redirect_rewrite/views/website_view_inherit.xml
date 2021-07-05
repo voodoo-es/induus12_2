@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+     <record id="website_form_view_inheirt" model="ir.ui.view">
+            <field name="name">website.form</field>
+            <field name="model">website</field>
+            <field name="inherit_id" ref="website.view_website_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='domain']" position="after">
+                        <field name="canonical_url"/>
+                    
+                </xpath>
+            </field>
+        </record>
+
+         <record id="res_config_settings_view_form" model="ir.ui.view">
+        <field name="name">website settings canonical url form</field>
+        <field name="model">res.config.settings</field>
+        <field name="inherit_id" ref="website.res_config_settings_view_form" />
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='website_name']/.." position="after">
+                <div class="row">
+                    <label class="col-md-3 o_light_label" string="Canonical domain" for="canonical_url"/>
+                    <field name="canonical_url" placeholder="https://mydomain.com" />
+                </div>
+            </xpath>
+        </field>
+    </record>
+    
+</odoo>
