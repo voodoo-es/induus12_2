@@ -82,3 +82,8 @@
 	path = OCA/project
 	url = git@github.com:OCA/project.git
 	branch = 12.0
+
+[submodule "OCA/purchase-workflow"]
+	path = OCA/purchase-workflow
+	url = git@github.com:OCA/purchase-workflow.git
+	branch = 12.0
